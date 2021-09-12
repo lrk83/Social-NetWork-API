@@ -1,4 +1,4 @@
-# E-Commerce-Back-End
+# Social-NetWork-API
 
 ## Video Walk Through (Click image to view)
 [![Screen Capture](https://img.youtube.com/vi/M2yoCyxoBTA/0.jpg)](https://youtu.be/M2yoCyxoBTA)
