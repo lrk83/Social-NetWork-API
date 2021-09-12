@@ -49,6 +49,10 @@ const thoughtController = {
 
     updateThought(req,res){
         Thought.findOneAndUpdate({ _id: req.params.id},req.body,{ new: true, runValidators: true })
+            .populate({
+                path: 'thoughts',
+                select: '-__v'
+            })    
             .then(dbThoughtData => {
                 if (!dbThoughtData) {
                   res.status(404).json({ message: 'No thought found with this id!' });
@@ -61,6 +65,10 @@ const thoughtController = {
 
     removeThought(req,res){
         Thought.findOneAndDelete({ _id: req.params.id })
+            .populate({
+                path: 'thoughts',
+                select: '-__v'
+            })
             .then(deletedThought => {
                 if (!deletedThought) {
                 return res.status(404).json({ message: 'No thought with this id!' });
